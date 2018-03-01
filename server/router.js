@@ -1,9 +1,5 @@
+const Authentication = require('./controllers/authentication');
+
 module.exports = function(app) {
-  app.get('/', function(req, res, next) {
-    res.send([
-      '111111',
-      '22222222',
-      '3333333'
-    ])
-  });
+  app.post('/singup', Authentication.singup);
 };
