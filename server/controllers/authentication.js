@@ -10,7 +10,14 @@ function tokenForUser(user) {
   }, config.secret);
 }
 
-exports.singup = function(req, res, next) {
+exports.signin = function(req, res, next) {
+  // User has auth'd email and password
+  res.send({
+    token: tokenForUser(req.user)
+  });
+}
+
+exports.signup = function(req, res, next) {
   const email = req.body.email;
   const password = req.body.password;
 
