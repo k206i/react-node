@@ -13,7 +13,7 @@ const requireSignin = passport.authenticate('local', {
 module.exports = function(app) {
   app.get('/', requireAuth, function(req, res) {
     res.send({
-      hi: 'there'
+      message: 'SECRET 123'
     });
   });
   app.post('/signin', requireSignin, Authentication.signin);
